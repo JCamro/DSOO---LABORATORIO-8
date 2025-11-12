@@ -64,6 +64,9 @@ public class GestorTitularidades {
             System.out.println("\nERROR ASIGNACION TITULARIDAD: Cuenta no registrada en el sistema");
             return;
         }
+        if (buscarTitularidad(clienteP, cuentaP)!=null) {
+            System.out.println("\nERROR ASIGNACION TITULARIDAD: Ya existe una titularidad con esta cuenta");
+        }
 
         Titularidad titularidad = new Titularidad("Secundario", clienteP, cuentaP, contadorIds);
         contadorIds++;

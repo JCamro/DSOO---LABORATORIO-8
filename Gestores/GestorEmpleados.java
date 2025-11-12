@@ -1,6 +1,7 @@
 package Gestores;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import ClasesBase.Admin;
@@ -72,7 +73,10 @@ public class GestorEmpleados {
             System.out.println("\nERROR: Correo ya registrado");        //VALIDAR CORREO
             return;
         }
-
+        if (!esEmailValido(correo)) {
+            System.out.println("\nERROR: Formato de correo no correspondiente (ejemplo@dominio.com)");
+            return;
+        }
         if (!validarStringNoVacio(contraseña)) {
             System.out.println("\nERROR: Contraseña no válida");
             return;
@@ -155,11 +159,11 @@ public class GestorEmpleados {
         return palabra != null && !palabra.trim().isEmpty();
     }
     
-    public boolean validarFormatoCorreo(String correo) {
-        if (validarSinEspaciosVacios(correo)) {return false;}
-        // Regex sencillo y práctico para validar formato de correo: local@domain.tld
-        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
-        return Pattern.matches(regex, correo);
+    public boolean esEmailValido(String correo) {
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"; //especificar caracteres que puede contener un email y su estructura
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(correo);
+        return matcher.matches();
     }
 
     public boolean validarSinEspaciosVacios(String palabra) {

@@ -9,9 +9,20 @@ public class Main {
     
     public static void main(String[] args) {
 
-        banco.getgClientes().registrarCliente("Josue Camero", "61217911", "18", "jcam@gmail.com", "123");
-        banco.getgEmpleados().registrarEmpleado(banco.getgEmpleados().getAdmin(), "Mario", "61217911", "18", "2", "123");
         banco.getgEmpleados().setAdmin(new Admin("admin", 10000000, 18, "admin", "123", -100));
+
+        banco.getgClientes().registrarCliente("Josue Camero", "61217911", "18", "1@c.com", "123");
+        banco.getgClientes().registrarCliente("Luciana V", "61217912", "18", "2@c.com", "123");
+        banco.getgClientes().registrarCliente("Jose Ludeña", "61217913", "18", "3@c.com", "123");
+        
+        banco.getgCuentas().abrirCuenta("61217911", "1111", "Ahorro"); //primera cuenta empieza con 100
+        banco.getgTitularidades().agregarTitularidad("61217912", "100");
+        banco.getgTitularidades().agregarTitularidad("61217913", "100");
+
+        banco.getgCuentas().abrirCuenta("61217912", "1111", "Ahorro"); //segunda cuenta empieza con 101
+
+        banco.getgEmpleados().registrarEmpleado(banco.getgEmpleados().getAdmin(), "Mario", "61217911", "18", "1@e.com", "123");
+        banco.getgEmpleados().registrarEmpleado(banco.getgEmpleados().getAdmin(), "Manuel", "61217912", "18", "2@e.com", "123");
 
         System.out.println("\n╔════════════════════════════════════╗");
         System.out.println("║    BIENVENIDO AL SISTEMA BANCARIO  ║");
@@ -150,41 +161,45 @@ public class Main {
                     registrarCliente();
                     break;
                 case "2":
-                    eliminarCliente();
+                    consultarTransaccionesCliente(empleado);
                     break;
                 case "3":
                     consultarCliente();
                     break;
                 case "4":
+                    eliminarCliente();
+                    break;
+
+                case "5":
                     abrirCuenta();
                     break;
-                case "5":
-                    eliminarCuenta();
-                    break;
                 case "6":
-                    procesarDeposito(empleado);
-                    break;
-                case "7":
-                    procesarRetiro(empleado);
-                    break;
-                case "8":
-                    procesarTransferencia(empleado);
-                    break;
-                case "9":
                     agregarTitular();
                     break;
-                case "10":
-                    consultarTransaccionesCliente(empleado);
-                    break;
-                case "11":
+                case "7":
                     consultarMovimientosCuenta(empleado);
                     break;
-                case "12":
-                    consultarCuenta(empleado);
-                    break;
-                case "13":
+                case "8":
                     consultarMisCuentas(empleado);
                     break;
+                case "9":
+                    consultarCuenta(empleado);
+                    break;
+                case "10":
+                    eliminarCuenta();
+                    break;
+
+                case "11":
+                    procesarDeposito(empleado);
+                    break;
+                case "12":
+                    procesarRetiro(empleado);
+                    break;
+                case "13":
+                    procesarTransferencia(empleado);
+                    break;
+                
+                
                 case "Q":
                     System.out.println("\n✓ Sesión cerrada");
                     usuarioActual = null;
@@ -207,65 +222,73 @@ public class Main {
             
             switch (opcion) {
                 case "1":
-                    registrarEmpleado(admin);
-                    break;
-                case "2":
-                    eliminarEmpleado(admin);
-                    break;
-                case "3":
                     registrarCliente();
                     break;
-                case "4":
-                    eliminarCliente();
-                    break;
-                case "5":
-                    consultarCliente();
-                    break;
-                case "6":
-                    abrirCuenta();
-                    break;
-                case "7":
-                    eliminarCuenta();
-                    break;
-                case "8":
-                    consultarCuenta(admin);
-                    break;
-                case "9":
-                    procesarDeposito(admin);
-                    break;
-                case "10":
-                    procesarRetiro(admin);
-                    break;
-                case "11":
-                    procesarTransferencia(admin);
-                    break;
-                case "12":
-                    agregarTitular();
-                    break;
-                case "13":
-                    verTodasTransacciones(admin);
-                    break;
-                case "14":
-                    consultarMovimientosCuenta(admin);
-                    break;
-                case "15":
+                case "2":
                     consultarTransaccionesCliente(admin);
                     break;
-                case "16":
+                case "3":
+                    consultarCliente();
+                    break;
+                case "4":
                     banco.getgClientes().listarClientes();
                     break;
-                case "17":
-                    banco.getgEmpleados().listarEmpleados();
+                case "5":
+                    eliminarCliente();
                     break;
-                case "18":
+
+
+                case "6":
+                    registrarEmpleado(admin);
+                    break;
+                case "7":
                     consultarEmpleado();
                     break;
-                case "19":
-                    banco.getgCuentas().mostrarCuentas();
+                case "8":
+                    banco.getgEmpleados().listarEmpleados();
                     break;
-                case "20":
+                case "9":
+                    eliminarEmpleado(admin);
+                    break;
+                
+                
+                
+                case "10":
+                    abrirCuenta();
+                    break;
+                case "11":
+                    agregarTitular();
+                    break;
+                case "12":
+                    consultarMovimientosCuenta(admin);
+                    break;
+                case "13":
                     consultarMisCuentas(admin);
                     break;
+                case "14":
+                    banco.getgCuentas().mostrarCuentas();
+                    break;
+                case "15":
+                    consultarCuenta(admin);
+                    break;
+                case "16":
+                    eliminarCuenta();
+                    break;
+                
+                case "17":
+                    procesarDeposito(admin);
+                    break;
+                case "18":
+                    procesarRetiro(admin);
+                    break;
+                case "19":
+                    procesarTransferencia(admin);
+                    break;
+                
+                case "20":
+                    verTodasTransacciones(admin);
+                    break;
+                
                 case "Q":
                     System.out.println("\n✓ Sesión cerrada");
                     usuarioActual = null;
@@ -280,7 +303,7 @@ public class Main {
     // ========== FUNCIONES PARA GESTOR CLIENTES ==========
 
     private static void registrarCliente() {
-
+        System.out.print("\n--- INGRESAR DATOS REGISTRAR CLIENTE ---");
         System.out.print("\nNombres y Apellidos: ");
         String nombres = scanner.nextLine();
         System.out.print("DNI: ");
@@ -296,6 +319,7 @@ public class Main {
     }
 
     private static void consultarCliente() {
+        System.out.print("\n--- INGRESAR DATOS CONSULTAR CLIENTE ---");
         System.out.print("\nDNI del Cliente: ");
         String dni = scanner.nextLine();
         
@@ -303,6 +327,7 @@ public class Main {
     }
 
     private static void eliminarCliente() {
+        System.out.print("\n--- INGRESAR DATOS ELIMINAR CLIENTE ---");
         System.out.print("\nDNI del Cliente: ");
         String dni = scanner.nextLine();
         
@@ -312,6 +337,7 @@ public class Main {
     // ========== FUNCIONES PARA EMPLEADOS ==========
 
     private static void registrarEmpleado(Admin admin) {
+        System.out.print("\n--- INGRESAR DATOS REGISTRAR EMPLEADO ---");
         System.out.print("\nNombres y Apellidos: ");
         String nombres = scanner.nextLine();
         System.out.print("DNI: ");
@@ -327,6 +353,7 @@ public class Main {
     }
 
     private static void eliminarEmpleado(Admin admin) {
+        System.out.print("\n--- INGRESAR DATOS ELIMINAR EMPLEADO ---");
         System.out.print("\nDNI del Empleado: ");
         String dni = scanner.nextLine();
         
@@ -334,6 +361,7 @@ public class Main {
     }
     
     private static void consultarEmpleado() {
+        System.out.print("\n--- INGRESAR DATOS CONSULTAR EMPLEADO ---");
         System.out.print("\nDNI del Empleado: ");
         String dni = scanner.nextLine();
         
@@ -343,6 +371,7 @@ public class Main {
     // ========== FUNCIONES PARA CUENTAS ==========
 
     private static void abrirCuenta() {
+        System.out.print("\n--- INGRESAR DATOS ABRIR CUENTA ---");
         System.out.print("\nDNI del Cliente: ");
         String dni = scanner.nextLine();
         System.out.print("Clave de la cuenta (4 dígitos): ");
@@ -354,6 +383,7 @@ public class Main {
     }
 
     private static void eliminarCuenta() {
+        System.out.print("\n--- INGRESAR DATOS ELIMINAR CUENTA ---");
         System.out.print("\nDNI del Cliente: ");
         String dni = scanner.nextLine();
         System.out.print("Número de Cuenta: ");
@@ -365,6 +395,7 @@ public class Main {
     }
     
     private static void consultarCuenta(Usuario usuario) {
+        System.out.print("\n--- INGRESAR DATOS CONSULTAR CUENTA ---");
         System.out.print("\nNúmero de Cuenta: ");
         String numeroCuenta = scanner.nextLine();
 
@@ -377,6 +408,7 @@ public class Main {
             banco.getgCuentas().mostrarCuentasCliente(usuario, String.valueOf(cliente.getDni()));
         }
         else {
+            System.out.print("\n--- INGRESAR DATOS CONSULTAR CUENTAS DE CLIENTE ---");
             System.out.print("\nDNI del Cliente: ");
             String dni = scanner.nextLine();
             banco.getgCuentas().mostrarCuentasCliente(usuario, dni);
@@ -399,11 +431,12 @@ public class Main {
 
     private static void procesarDeposito(Usuario usuario) {
 
+        System.out.print("\n--- INGRESAR DATOS DEPOSITO ---");
         System.out.print("\nNúmero de Cuenta: ");
         String numeroCuenta = scanner.nextLine();
         System.out.print("Monto a depositar: ");
         String monto = scanner.nextLine();
-        System.out.print("DNI del Cliente: ");
+        System.out.print("DNI del Cliente que Depositara: ");
         String dni = scanner.nextLine();
         System.out.print("Clave de la cuenta: ");
         String clave = scanner.nextLine();
@@ -412,7 +445,7 @@ public class Main {
     }
 
     private static void procesarRetiro(Usuario usuario) {
-
+        System.out.print("\n--- INGRESAR DATOS RETIRO ---");
         System.out.print("\nNúmero de Cuenta: ");
         String numeroCuenta = scanner.nextLine();
         System.out.print("Monto a retirar: ");
@@ -426,7 +459,7 @@ public class Main {
     }
 
     private static void procesarTransferencia(Empleado usuario) {
-        
+        System.out.print("\n--- INGRESAR DATOS TRANSFERENCIA ---");
         System.out.print("\nNúmero de Cuenta Origen: ");
         String cuentaOrigen = scanner.nextLine();
         System.out.print("Número de Cuenta Destino: ");
@@ -445,6 +478,7 @@ public class Main {
 
 
     private static void consultarMovimientosCuenta(Usuario usuarioActual) {
+        System.out.print("\n--- INGRESAR DATOS CONSULTAR MOVIMIENTOS DE CUENTA ---");
         System.out.print("Número de Cuenta: ");
         String numeroCuenta = scanner.nextLine();
         
@@ -472,6 +506,7 @@ public class Main {
             banco.getgTransacciones().mostrarMovimientosCliente(usuarioActual, String.valueOf(usuarioActual.getDni()));
         }
         else {
+            System.out.print("\n--- INGRESAR DATOS CONSULTAR TRANSACCIONES CLIENTE ---");
             System.out.print("\nDNI: ");
             String dni = scanner.nextLine();
             

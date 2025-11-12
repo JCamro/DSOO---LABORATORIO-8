@@ -13,7 +13,7 @@ public class GestorCuentas {
 
     private GestorTitularidades gTitularidades;
     private GestorClientes gClientes;
-    private int contadorNroCuenta = 1;
+    private int contadorNroCuenta = 100;
 
     public GestorCuentas(GestorTitularidades gTitularidades, GestorClientes gClientes) {
         this.gTitularidades = gTitularidades;

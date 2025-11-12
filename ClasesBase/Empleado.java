@@ -14,19 +14,25 @@ public class Empleado extends Usuario {
         System.out.println("\n════════════════════════════════════");
             System.out.println("    MENÚ EMPLEADO: " + getNombres());
             System.out.println("════════════════════════════════════");
+            System.out.println("\n--- ACCIONES PARA CLIENTE ---");
             System.out.println("1. Registrar Cliente");
-            System.out.println("2. Eliminar Cliente");
+            System.out.println("2. Consultar Movimientos Cliente");
             System.out.println("3. Consultar Cliente");
-            System.out.println("4. Abrir Cuenta");
-            System.out.println("5. Eliminar Cuenta");
-            System.out.println("6. Procesar Depósito");
-            System.out.println("7. Procesar Retiro");
-            System.out.println("8. Procesar Transferencia");
-            System.out.println("9. Agregar Titular a Cuenta");
-            System.out.println("10. Consultar Movimientos Cliente");
-            System.out.println("11. Consultar Movimientos de Cuenta");
-            System.out.println("12. Consultar Cuenta");
-            System.out.println("Q. Cerrar Sesión");
+            System.out.println("4. Eliminar Cliente");
+            
+            System.out.println("\n--- ACCIONES PARA CUENTA ---");
+            System.out.println("5. Abrir Cuenta");
+            System.out.println("6. Agregar Titular a Cuenta");
+            System.out.println("7. Consultar Movimientos de Cuenta");
+            System.out.println("8. Consultar Cuentas de Cliente");
+            System.out.println("9. Consultar Cuenta");
+            System.out.println("10. Eliminar Cuenta");
+            
+            System.out.println("\n--- TRANSACCIONES ---");
+            System.out.println("11. Procesar Depósito");
+            System.out.println("12. Procesar Retiro");
+            System.out.println("13. Procesar Transferencia");
+            System.out.println("\nQ. Cerrar Sesión");
         
     }
 

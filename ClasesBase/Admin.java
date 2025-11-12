@@ -11,26 +11,33 @@ public class Admin extends Empleado {
             System.out.println("\n════════════════════════════════════");
             System.out.println("    MENÚ ADMINISTRADOR: " + getNombres());
             System.out.println("════════════════════════════════════");
-            System.out.println("1. Registrar Empleado");
-            System.out.println("2. Eliminar Empleado");
-            System.out.println("3. Registrar Cliente");
-            System.out.println("4. Eliminar Cliente");
-            System.out.println("5. Consultar Cliente");
-            System.out.println("6. Abrir Cuenta");
-            System.out.println("7. Eliminar Cuenta");
-            System.out.println("8. Consultar Cuenta");
-            System.out.println("9. Procesar Depósito");
-            System.out.println("10. Procesar Retiro");
-            System.out.println("11. Procesar Transferencia");
-            System.out.println("12. Agregar Titular a Cuenta");
-            System.out.println("13. Ver Todas las Transacciones");
-            System.out.println("14. Consultar Movimientos de Cuenta");
-            System.out.println("15. Consultar Transacciones de Cliente");
-            System.out.println("16. Consultar Lista de Clientes");
-            System.out.println("17. Consultar Lista de Empleados");
-            System.out.println("18. Mostrar Empleado");
-            System.out.println("19. Consultar Lista de Cuentas");
-            System.out.println("20. Consultar Cuentas de cliente");
-            System.out.println("Q. Cerrar Sesión");
+            System.out.println("\n--- ACCIONES PARA CLIENTE ---");
+            System.out.println("1. Registrar Cliente");
+            System.out.println("2. Consultar Movimientos de Cliente");
+            System.out.println("3. Consultar Cliente");
+            System.out.println("4. Consultar Lista de Clientes");
+            System.out.println("5. Eliminar Cliente");
+            
+            System.out.println("\n--- ACCIONES PARA EMPLEADOS ---");
+            System.out.println("6. Registrar Empleado");
+            System.out.println("7. Mostrar Empleado");
+            System.out.println("8. Consultar Lista de Empleados");
+            System.out.println("9. Eliminar Empleado");
+            
+            System.out.println("\n--- ACCIONES PARA CUENTA ---");
+            System.out.println("10. Abrir Cuenta");
+            System.out.println("11. Agregar Titular a Cuenta");
+            System.out.println("12. Consultar Movimientos de Cuenta");
+            System.out.println("13. Consultar Cuentas de Cliente");
+            System.out.println("14. Consultar Lista de Cuentas");
+            System.out.println("15. Consultar Cuenta");
+            System.out.println("16. Eliminar Cuenta");
+
+            System.out.println("\n--- TRANSACCIONES ---");
+            System.out.println("17. Procesar Depósito");
+            System.out.println("18. Procesar Retiro");
+            System.out.println("19. Procesar Transferencia");
+            System.out.println("20. Ver Todas las Transacciones");
+            System.out.println("\nQ. Cerrar Sesión");
     }
 }

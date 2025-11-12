@@ -1,6 +1,7 @@
 package Gestores;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import ClasesBase.Cliente;
@@ -43,6 +44,10 @@ public class GestorClientes {
         }
         if (buscarClienteCorreo(correo)!=null) {
             System.out.println("\nERROR AL REGISTRAR CLIENTE: Correo ya registrado anteriormente");
+            return;
+        }
+        if (!esEmailValido(correo)) {
+            System.out.println("\nERROR AL REGISTRAR CLIENTE: Formato de correo no correspondiente (ejemplo@dominio.com)");
             return;
         }
         if (!validarStringNoVacio(contraseña) || !validarSinEspaciosVacios(contraseña)) {
@@ -167,5 +172,11 @@ public class GestorClientes {
             }
         }
         return null;
+    }
+    public boolean esEmailValido(String correo) {
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"; //especificar caracteres que puede contener un email y su estructura
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(correo);
+        return matcher.matches();
     }
 }
