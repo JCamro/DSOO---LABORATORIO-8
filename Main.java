@@ -33,7 +33,7 @@ public class Main {
             banco.mostrarMenuPrincipal();
             String opcion = scanner.nextLine();
             
-            switch (opcion) {
+            switch (opcion.toUpperCase()) {
                 case "1":
                     loginCliente();
                     break;
@@ -117,7 +117,7 @@ public class Main {
             System.out.print("\nSeleccione una opción: ");
             String opcion = scanner.nextLine().toUpperCase();
             
-            switch (opcion) {
+            switch (opcion.toUpperCase()) {
                 case "1":
                     procesarDeposito(cliente);
                     break;
@@ -156,7 +156,7 @@ public class Main {
             System.out.print("\nSeleccione una opción: ");
             String opcion = scanner.nextLine();
             
-            switch (opcion) {
+            switch (opcion.toUpperCase()) {
                 case "1":
                     registrarCliente();
                     break;
@@ -223,7 +223,7 @@ public class Main {
             System.out.print("\nSeleccione una opción: ");
             String opcion = scanner.nextLine();
             
-            switch (opcion) {
+            switch (opcion.toUpperCase()) {
                 case "1":
                     registrarCliente();
                     break;
