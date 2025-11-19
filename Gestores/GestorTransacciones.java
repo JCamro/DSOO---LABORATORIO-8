@@ -417,7 +417,7 @@ public class GestorTransacciones {
         }
 
         System.out.println("\n╔════════════════════════════════════════╗");
-        System.out.println("║      TODAS LAS TRANSACCIONES           ║");
+        System.out.println("║         TODAS LAS TRANSACCIONES        ║");
         System.out.println("╚════════════════════════════════════════╝");
 
         if (listaTransacciones.isEmpty()) {
