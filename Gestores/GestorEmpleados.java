@@ -83,6 +83,7 @@ public class GestorEmpleados {
         }
 
         Empleado nuevoEmpleado = new Empleado(nombres, dniEmpleado, edadEmpleado, correo, contraseña, contadorIds);
+        contadorIds++;
         listaEmpleados.add(nuevoEmpleado);
         System.out.println(nuevoEmpleado);
     }
